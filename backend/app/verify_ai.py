@@ -7,7 +7,7 @@ from .schemas import Category
 
 
 def sample_context():
-    source = json.loads((BACKEND_DIR / 'data' / 'authorcare_sample_data.json').read_text(encoding='utf-8'))
+    source = json.loads((BACKEND_DIR / 'data' / 'bookleaf_sample_data.json').read_text(encoding='utf-8'))
     author = source['authors'][0]
     book = dict(author['books'][0])
     book.pop('book_id', None)

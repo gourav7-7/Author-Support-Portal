@@ -9,7 +9,7 @@ from .security import hash_password
 
 
 def seed_data(db):
-    data = json.loads((BACKEND_DIR / 'data' / 'authorcare_sample_data.json').read_text(encoding='utf-8'))
+    data = json.loads((BACKEND_DIR / 'data' / 'bookleaf_sample_data.json').read_text(encoding='utf-8'))
     for author in data['authors']:
         if db.get(User, author['author_id']) is None:
             db.add(User(id=author['author_id'], name=author['name'], email=author['email'].lower(),

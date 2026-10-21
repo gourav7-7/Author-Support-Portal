@@ -1,0 +1,12 @@
+.env
+.local-secret
+.venv
+.git
+**/__pycache__
+**/.pytest_cache
+**/*.db
+**/*.db-*
+frontend/node_modules
+frontend/dist
+runtime
+docs

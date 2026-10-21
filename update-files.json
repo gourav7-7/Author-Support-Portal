@@ -1,0 +1,129 @@
+{
+  "release": "1.1.0",
+  "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "2ba74a2f14e3bda3fb3e027ab35fa81b1f1a8aa44f723e1f99ec773517251966"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "66f592f14dac8551e38c95e2e9295092c867dee10314a8c3a17454bcbc5447f6"
+    },
+    {
+      "path": "README.md",
+      "sha256": "c264a4cbdeea94c1b8cfdd820d1d6cc58944307d9c771c541ec2e733f5878b40"
+    },
+    {
+      "path": "backend/app/ai.py",
+      "sha256": "a2fcb03ecce2f0d248a031df9543b053209dab185cb36c765a7e0e5ce51e31ed"
+    },
+    {
+      "path": "backend/app/api.py",
+      "sha256": "9bc31ba06099be83b8d334fd3012517b6a9f7ad71ad3140dcf4ba3392bb592b1"
+    },
+    {
+      "path": "backend/app/attachments.py",
+      "sha256": "7f7e9d39858cbaaca784abdc868c40c44a3880c57883481740522babffe61475"
+    },
+    {
+      "path": "backend/app/main.py",
+      "sha256": "81434122b696ff2cdcb17142663f8716cdcaa96fd2ca0677cef80961538af575"
+    },
+    {
+      "path": "backend/app/models.py",
+      "sha256": "6a4c9ab38a0ae358097cb5c2fbff1dee8f86a63019259e43c31a2a48255989b5"
+    },
+    {
+      "path": "backend/app/serializers.py",
+      "sha256": "3b8ae91f25eb38297f3adc9e6acfaa919b674a451ea3207eb484eea25f5e20b9"
+    },
+    {
+      "path": "backend/app/verify_ai.py",
+      "sha256": "4b583fabaaa1553c7ccf20fdbf7316657426ce9757793ef495c514dda6579bd5"
+    },
+    {
+      "path": "backend/data/knowledge_base.json",
+      "sha256": "3fa0ff933a9306719a0ed1341a6e12c14e7bb57fa7af00febf1cb530adb6267e"
+    },
+    {
+      "path": "backend/tests/conftest.py",
+      "sha256": "dfd86cf9b5ff06fa437723cdf197e324abdc23158c9c3c47b85322c09fa1ca09"
+    },
+    {
+      "path": "backend/tests/test_ai.py",
+      "sha256": "5cba4dab261e8ba647f6ea1196316b1f500af10c4794d1f60292b54e94c059d4"
+    },
+    {
+      "path": "backend/tests/test_attachments.py",
+      "sha256": "de10a4940113d7c711f5aaf74d5fc766e7629c959f59cef0bee1790a6d9a5b56"
+    },
+    {
+      "path": "backend/tests/test_portal.py",
+      "sha256": "870ba449f318ab154753d5bb583a8d15e26e873b54408100e6cacccb36e296be"
+    },
+    {
+      "path": "docs/API.md",
+      "sha256": "bf47b0ea732438101eaa10b75ea6dd587dcbea9dfab6627673cfa99dc776e8b8"
+    },
+    {
+      "path": "docs/APPROACH.md",
+      "sha256": "e5fdd521f2e4683d7950090051bbd89bfd711d4795627802d7d8dd36144a0036"
+    },
+    {
+      "path": "docs/MANUAL_REVIEW.md",
+      "sha256": "3e48ae3e8bd46c6a36b7dc8e262954d8dca832e627157a4e4cdd02db1cb2a06f"
+    },
+    {
+      "path": "docs/ONE_DAY_PLAN.md",
+      "sha256": "3062cfe27f6dbd2169b6963761b6b155e84ddf8e66c82ba25131f25d1aa55a66"
+    },
+    {
+      "path": "docs/REQUIREMENTS_AUDIT.md",
+      "sha256": "d77c7f32eeecbed676056043788b01a7f14f601e8c2cf4674ec728249a5e2ff6"
+    },
+    {
+      "path": "docs/UPGRADE.md",
+      "sha256": "0633bcc9af60b8a10ac8563bb7d1211173b199a6813a4c4ccf4b51950dc3218e"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "sha256": "65ab30a845c5d09631ad3c5c387fc3c389869dc8719e9b94f99039cb94f0298e"
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "sha256": "1707866d5e00daf72d5f6070b967f0195cbb4e0b98c5edafda7ac0274df7cb55"
+    },
+    {
+      "path": "frontend/package.json",
+      "sha256": "6cb6824c0e23fe237ea5f6a784dc1939c54424bb2a766954a96c1b893c2a67ed"
+    },
+    {
+      "path": "frontend/src/api.js",
+      "sha256": "76dda77d59eacc8c997799cf1ce655140edd7cee903530abad3dc4f5e8748837"
+    },
+    {
+      "path": "frontend/src/components/Attachments.jsx",
+      "sha256": "84859beee63fdce5a8d2d73014d8a43d0cfa543c896b595c3930763e3839c89b"
+    },
+    {
+      "path": "frontend/src/pages/NewTicket.jsx",
+      "sha256": "206268d6f78b92ea47c7742b8cc1208b999fcf40d6c360a0b0fa963837115ef3"
+    },
+    {
+      "path": "frontend/src/pages/TicketDetail.jsx",
+      "sha256": "284704a56467bc686213b4786e494d90d73cce98940efe305997c287c8f53514"
+    },
+    {
+      "path": "frontend/src/styles.css",
+      "sha256": "e9e7dc32d7906d57762c8ed055d799703001139402405c1773e6e49f39823ab1"
+    },
+    {
+      "path": "upgrade.ps1",
+      "sha256": "0fd40236d96f4c48ec075345caa150aaf537bcf430c746c01ea3c7524f611f74"
+    },
+    {
+      "path": "verify-ai.ps1",
+      "sha256": "93333ffb205317f7641904e7d4c303acb4839973c401fed2967ca4f9efcc8d51"
+    }
+  ]
+}

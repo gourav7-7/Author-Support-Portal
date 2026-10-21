@@ -1,0 +1,24 @@
+# Combine with compose.yml. The PostgreSQL port is intentionally not exposed.
+services:
+  web:
+    environment:
+      DATABASE_URL: postgresql+psycopg://bookleaf:${POSTGRES_PASSWORD:-bookleaf-local-only}@db:5432/bookleaf
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: bookleaf
+      POSTGRES_DB: bookleaf
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-bookleaf-local-only}
+    volumes:
+      - bookleaf-postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bookleaf -d bookleaf"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+volumes:
+  bookleaf-postgres:

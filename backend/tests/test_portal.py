@@ -13,7 +13,7 @@ from app.security import RateLimiter, hash_password, verify_password
 
 
 def test_seed_exact_records_and_idempotency(client):
-    original = json.loads((BACKEND_DIR / 'data' / 'bookleaf_sample_data.json').read_text(encoding='utf-8'))
+    original = json.loads((BACKEND_DIR / 'data' / 'authorcare_sample_data.json').read_text(encoding='utf-8'))
     with SessionLocal() as db:
         seed_data(db)
         assert db.scalar(select(func.count()).select_from(User).where(User.role == 'author')) == 10

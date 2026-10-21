@@ -34,7 +34,7 @@ def verify_password(password: str, encoded: str):
 def create_token(user: User):
     now = datetime.now(timezone.utc)
     return jwt.encode({'sub': user.id, 'iat': now, 'exp': now + timedelta(minutes=settings.token_expire_minutes),
-                       'iss': 'bookleaf-support', 'aud': 'bookleaf-portal', 'jti': secrets.token_hex(16)},
+                       'iss': 'authorcare-support', 'aud': 'authorcare-portal', 'jti': secrets.token_hex(16)},
                       settings.jwt_secret, algorithm='HS256')
 
 
@@ -47,7 +47,7 @@ def current_user(credentials: HTTPAuthorizationCredentials | None = Depends(bear
         raise invalid
     try:
         payload = jwt.decode(credentials.credentials, settings.jwt_secret, algorithms=['HS256'],
-                             issuer='bookleaf-support', audience='bookleaf-portal',
+                             issuer='authorcare-support', audience='authorcare-portal',
                              options={'require': ['exp', 'iat', 'sub', 'jti']})
         user = db.get(User, payload['sub'])
     except (jwt.InvalidTokenError, KeyError):

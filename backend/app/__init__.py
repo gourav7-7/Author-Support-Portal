@@ -1,1 +1,1 @@
-"""BookLeaf author support application."""
+"""AuthorCare author support application."""

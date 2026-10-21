@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 
 export async function api(path, options = {}) {
-  const token = sessionStorage.getItem("bookleaf.token");
+  const token = sessionStorage.getItem("authorcare.token");
   const { rawBody, responseType, ...requestOptions } = options;
   let response;
   try {

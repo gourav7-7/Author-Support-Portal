@@ -66,7 +66,7 @@ export function BooksPage({ bookId }) {
             <h1>{book.title}</h1>
             <Badge value={book.status} />
             <p className="muted">
-              Publication and royalty information from your BookLeaf account.
+              Publication and royalty information from your AuthorCare account.
             </p>
             <button
               className="button primary"

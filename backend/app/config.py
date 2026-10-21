@@ -14,7 +14,7 @@ class Settings(BaseSettings):
     jwt_secret: str = ''
     token_expire_minutes: int = 480
     auto_seed: bool = True
-    admin_email: str = 'admin@bookleaf.demo'
+    admin_email: str = 'admin@authorcare.demo'
     demo_author_password: str = 'AuthorDemo!2026'
     demo_admin_password: str = 'AdminDemo!2026'
     openai_api_key: str = ''
@@ -26,7 +26,7 @@ class Settings(BaseSettings):
     def initialize(self):
         if not self.database_url:
             (BACKEND_DIR / 'data').mkdir(exist_ok=True)
-            self.database_url = f"sqlite:///{(BACKEND_DIR / 'data' / 'bookleaf.db').as_posix()}"
+            self.database_url = f"sqlite:///{(BACKEND_DIR / 'data' / 'authorcare.db').as_posix()}"
         if self.database_url.startswith(('postgres://', 'postgresql://')):
             self.database_url = self.database_url.replace('postgres://', 'postgresql+psycopg://', 1).replace('postgresql://', 'postgresql+psycopg://', 1)
         if not self.jwt_secret:

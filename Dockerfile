@@ -12,9 +12,9 @@ COPY backend/requirements.txt ./requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 COPY backend/ ./
 COPY --from=frontend /build/dist /app/frontend/dist
-RUN groupadd --system bookleaf && useradd --system --gid bookleaf bookleaf \
-    && mkdir -p /app/runtime && chown -R bookleaf:bookleaf /app
-USER bookleaf
+RUN groupadd --system authorcare && useradd --system --gid authorcare authorcare \
+    && mkdir -p /app/runtime && chown -R authorcare:authorcare /app
+USER authorcare
 EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
     CMD python -c "import os,urllib.request; urllib.request.urlopen('http://127.0.0.1:' + os.getenv('PORT','8000') + '/health', timeout=3)"

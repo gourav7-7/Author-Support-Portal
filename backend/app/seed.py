@@ -9,7 +9,7 @@ from .security import hash_password
 
 
 def seed_data(db):
-    data = json.loads((BACKEND_DIR / 'data' / 'bookleaf_sample_data.json').read_text(encoding='utf-8'))
+    data = json.loads((BACKEND_DIR / 'data' / 'authorcare_sample_data.json').read_text(encoding='utf-8'))
     for author in data['authors']:
         if db.get(User, author['author_id']) is None:
             db.add(User(id=author['author_id'], name=author['name'], email=author['email'].lower(),
@@ -24,7 +24,7 @@ def seed_data(db):
                     values[field] = date.fromisoformat(values[field]) if values[field] else None
                 db.add(Book(author_id=author['author_id'], **values))
     if db.get(User, 'ADMIN001') is None:
-        db.add(User(id='ADMIN001', name='BookLeaf Operations', email=settings.admin_email.lower(),
+        db.add(User(id='ADMIN001', name='AuthorCare Operations', email=settings.admin_email.lower(),
                     password_hash=hash_password(settings.demo_admin_password), role='admin'))
     db.commit()
 

@@ -3,13 +3,13 @@ services:
     build: .
     env_file: .env
     environment:
-      DATABASE_URL: ${DATABASE_URL:-sqlite:////app/runtime/bookleaf.db}
+      DATABASE_URL: ${DATABASE_URL:-sqlite:////app/runtime/authorcare.db}
       FRONTEND_DIST: /app/frontend/dist
       PORT: "8000"
     ports:
       - "127.0.0.1:8000:8000"
     volumes:
-      - bookleaf-data:/app/runtime
+      - authorcare-data:/app/runtime
     restart: unless-stopped
 volumes:
-  bookleaf-data:
+  authorcare-data:

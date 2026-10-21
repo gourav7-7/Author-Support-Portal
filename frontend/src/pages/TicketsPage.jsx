@@ -220,7 +220,7 @@ export function TicketsPage({ admin, meta }) {
             text={
               admin
                 ? "New author queries will arrive here. Try another filter, or sign in as an author to create a ticket."
-                : "Raise a query to start a conversation with the BookLeaf team."
+                : "Raise a query to start a conversation with the AuthorCare team."
             }
           />
         )}

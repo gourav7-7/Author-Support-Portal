@@ -82,7 +82,7 @@ export function Workspace({ user, onLogout }) {
           )}
         </div>
         <div className="sidebar-bottom">
-          BookLeaf Publishing<span>Author Support & Communication</span>
+          AuthorCare Publishing<span>Author Support & Communication</span>
         </div>
       </aside>
       <div className="main-shell">
@@ -127,7 +127,7 @@ export function Workspace({ user, onLogout }) {
         </main>
         <footer>
           Made for meaningful conversations.
-          <span>BookLeaf Author Care · Assignment demo</span>
+          <span>AuthorCare Author Care · Assignment demo</span>
         </footer>
       </div>
     </div>
@@ -139,22 +139,22 @@ export function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   function logout() {
-    sessionStorage.removeItem("bookleaf.token");
+    sessionStorage.removeItem("authorcare.token");
     setUser(null);
     navigate("overview");
   }
   useEffect(() => {
     const expired = () => {
-      sessionStorage.removeItem("bookleaf.token");
+      sessionStorage.removeItem("authorcare.token");
       setUser(null);
       setError("Your session ended. Please sign in again.");
     };
     window.addEventListener("session-expired", expired);
-    if (sessionStorage.getItem("bookleaf.token"))
+    if (sessionStorage.getItem("authorcare.token"))
       api("/auth/me")
         .then(setUser)
         .catch((err) => {
-          sessionStorage.removeItem("bookleaf.token");
+          sessionStorage.removeItem("authorcare.token");
           setError(err.message);
         })
         .finally(() => setLoading(false));

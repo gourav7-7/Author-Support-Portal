@@ -10,7 +10,7 @@ export function Login({ onLogin, initialError }) {
   const [busy, setBusy] = useState(false);
   const choose = (role) => {
     setEmail(
-      role === "admin" ? "admin@bookleaf.demo" : "priya.sharma@email.com",
+      role === "admin" ? "admin@authorcare.demo" : "priya.sharma@email.com",
     );
     setPassword(role === "admin" ? "AdminDemo!2026" : "AuthorDemo!2026");
     setError("");
@@ -24,7 +24,7 @@ export function Login({ onLogin, initialError }) {
         method: "POST",
         body: { email, password },
       });
-      sessionStorage.setItem("bookleaf.token", data.access_token);
+      sessionStorage.setItem("authorcare.token", data.access_token);
       onLogin(data.user);
     } catch (err) {
       setError(err.message);
@@ -49,7 +49,7 @@ export function Login({ onLogin, initialError }) {
           </h1>
           <p>
             A dedicated space for your books, royalties and conversations with
-            the BookLeaf team.
+            the AuthorCare team.
           </p>
           <div className="story-books" aria-hidden="true">
             <div className="spine one">THE AUTHOR’S JOURNEY</div>

@@ -362,7 +362,7 @@ export function TicketDetail({ ticketId, user, meta }) {
                       ? "Visible only to admins"
                       : admin
                         ? "Visible to the author after sending"
-                        : "Visible to the BookLeaf support team"}{" "}
+                        : "Visible to the AuthorCare support team"}{" "}
                     · {text.length}/6,000
                   </span>
                   <div>

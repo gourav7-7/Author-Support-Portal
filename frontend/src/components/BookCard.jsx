@@ -10,7 +10,7 @@ export function BookCover({ book, index = 0, large = false }) {
     >
       <Leaf size={large ? 30 : 20} />
       <span>{book.title}</span>
-      <small>BOOKLEAF PUBLISHING</small>
+      <small>AUTHORCARE PUBLISHING</small>
     </div>
   );
 }

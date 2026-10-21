@@ -1,4 +1,4 @@
-# BookLeaf Author Support & Communication Portal
+# AuthorCare Author Support & Communication Portal
 
 A support portal where authors can view their books, check royalty information, and raise queries. The operations team can manage tickets, review AI-generated responses, and communicate with authors from a shared dashboard.
 
@@ -21,7 +21,7 @@ Built with React, FastAPI, SQLAlchemy, and OpenAI. Supports PostgreSQL and SQLit
 - Ticket queue with status, category, priority, date, assignment, and search filters.
 - Unresolved tickets ordered by priority and age.
 - Automatic AI classification and priority assignment, with manual overrides.
-- Editable response drafts based on the supplied BookLeaf policies and relevant account information.
+- Editable response drafts based on the supplied AuthorCare policies and relevant account information.
 - Public replies, private internal notes, status changes, and self-assignment.
 - Authenticated attachment downloads and ticket activity history.
 - Version checks to prevent conflicting updates from silently overwriting each other.
@@ -84,7 +84,7 @@ For SQLite, leave the value empty:
 DATABASE_URL=
 ```
 
-The SQLite database is created at `backend/data/bookleaf.db`.
+The SQLite database is created at `backend/data/authorcare.db`.
 
 Keep `.env` out of version control. Restart the backend after changing environment variables.
 
@@ -120,7 +120,7 @@ These credentials are for the supplied sample dataset only.
 
 | Account | Email | Password |
 | --- | --- | --- |
-| Admin | admin@bookleaf.demo | AdminDemo!2026 |
+| Admin | admin@authorcare.demo | AdminDemo!2026 |
 | Priya Sharma | priya.sharma@email.com | AuthorDemo!2026 |
 | Rohit Kapoor | rohit.kapoor@email.com | AuthorDemo!2026 |
 | Ananya Reddy | ananya.reddy@email.com | AuthorDemo!2026 |

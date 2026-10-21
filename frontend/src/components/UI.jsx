@@ -66,7 +66,7 @@ export function Brand({ inverse = false }) {
         <Leaf size={24} strokeWidth={1.6} />
       </span>
       <div>
-        BookLeaf<small>AUTHOR CARE</small>
+        AuthorCare<small>AUTHOR CARE</small>
       </div>
     </div>
   );

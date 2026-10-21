@@ -2,23 +2,23 @@
 services:
   web:
     environment:
-      DATABASE_URL: postgresql+psycopg://bookleaf:${POSTGRES_PASSWORD:-bookleaf-local-only}@db:5432/bookleaf
+      DATABASE_URL: postgresql+psycopg://authorcare:${POSTGRES_PASSWORD:-authorcare-local-only}@db:5432/authorcare
     depends_on:
       db:
         condition: service_healthy
   db:
     image: postgres:16-alpine
     environment:
-      POSTGRES_USER: bookleaf
-      POSTGRES_DB: bookleaf
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-bookleaf-local-only}
+      POSTGRES_USER: authorcare
+      POSTGRES_DB: authorcare
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-authorcare-local-only}
     volumes:
-      - bookleaf-postgres:/var/lib/postgresql/data
+      - authorcare-postgres:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U bookleaf -d bookleaf"]
+      test: ["CMD-SHELL", "pg_isready -U authorcare -d authorcare"]
       interval: 5s
       timeout: 5s
       retries: 10
     restart: unless-stopped
 volumes:
-  bookleaf-postgres:
+  authorcare-postgres:

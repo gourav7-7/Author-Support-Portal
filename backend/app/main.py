@@ -31,7 +31,7 @@ async def lifespan(app):
     yield
 
 
-app = FastAPI(title='BookLeaf Author Support API', version='1.1.0', lifespan=lifespan,
+app = FastAPI(title='AuthorCare Author Support API', version='1.1.0', lifespan=lifespan,
               description='Author and admin support portal. Login at /api/auth/login, then use Authorize with the returned bearer token.')
 app.add_middleware(CORSMiddleware, allow_origins=[x.strip() for x in settings.cors_origins.split(',') if x.strip()],
                    allow_credentials=False, allow_methods=['GET', 'POST', 'PATCH'], allow_headers=['Authorization', 'Content-Type'])

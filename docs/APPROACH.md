@@ -12,7 +12,7 @@ The supplied dataset is imported without changing its records. Authors can acces
 
 Tickets are saved before classification begins, so a provider failure does not prevent submission. A single structured-output request produces the category and priority. Administrators can override either field, and those choices are preserved on retries.
 
-Response drafts combine relevant BookLeaf policies, book details, accumulated pending royalties, and recent public messages. Private notes and unrelated account data are excluded. Attachment contents are not sent to the model.
+Response drafts combine relevant AuthorCare policies, book details, accumulated pending royalties, and recent public messages. Private notes and unrelated account data are excluded. Attachment contents are not sent to the model.
 
 The model cannot perform operational actions. Prompts instruct it to avoid inventing payment dates, verification results, or completed actions. An administrator reviews and edits each response before sending it.
 

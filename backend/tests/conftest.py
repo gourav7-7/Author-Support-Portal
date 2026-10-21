@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.engine import make_url
 from sqlalchemy.schema import CreateSchema, DropSchema
 
-_test_directory = tempfile.TemporaryDirectory(prefix='bookleaf-tests-')
+_test_directory = tempfile.TemporaryDirectory(prefix='authorcare-tests-')
 _schema_engine = None
 _test_schema = None
 _database_url = 'sqlite:///' + _test_directory.name + '/test.db'
@@ -17,14 +17,14 @@ if os.environ.get('TEST_DATABASE_URL'):
         raise ValueError('TEST_DATABASE_URL must be PostgreSQL; omit it to use temporary SQLite.')
     _url = _url.set(drivername='postgresql+psycopg')
     _schema_engine = create_engine(_url)
-    _test_schema = 'bookleaf_test_' + uuid4().hex
+    _test_schema = 'authorcare_test_' + uuid4().hex
     with _schema_engine.begin() as connection:
         connection.execute(CreateSchema(_test_schema))
     _database_url = _url.update_query_dict({'options': '-csearch_path=' + _test_schema}).render_as_string(hide_password=False)
 
 os.environ.update(DATABASE_URL=_database_url,
                   JWT_SECRET='test-secret-only-' + 'x' * 48, OPENAI_API_KEY='', AUTO_SEED='true',
-                  ADMIN_EMAIL='admin@bookleaf.demo', DEMO_AUTHOR_PASSWORD='AuthorDemo!2026',
+                  ADMIN_EMAIL='admin@authorcare.demo', DEMO_AUTHOR_PASSWORD='AuthorDemo!2026',
                   DEMO_ADMIN_PASSWORD='AdminDemo!2026')
 
 from fastapi.testclient import TestClient
@@ -67,7 +67,7 @@ def headers(client):
     result = {}
     for name, email, password in [('author', 'priya.sharma@email.com', 'AuthorDemo!2026'),
                                   ('other', 'rohit.kapoor@email.com', 'AuthorDemo!2026'),
-                                  ('admin', 'admin@bookleaf.demo', 'AdminDemo!2026')]:
+                                  ('admin', 'admin@authorcare.demo', 'AdminDemo!2026')]:
         response = client.post('/api/auth/login', json={'email': email, 'password': password})
         assert response.status_code == 200, response.text
         result[name] = {'Authorization': 'Bearer ' + response.json()['access_token']}

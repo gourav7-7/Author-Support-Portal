@@ -89,7 +89,7 @@ Configure secrets through the hosting platform's environment settings.
 | `OPENAI_API_KEY` | OpenAI API key |
 | `OPENAI_MODEL` | `gpt-4o-mini` |
 | `AUTO_SEED` | `true` to initialize the supplied dataset |
-| `ADMIN_EMAIL` | `admin@bookleaf.demo`, or the documented demo admin email |
+| `ADMIN_EMAIL` | `admin@authorcare.demo`, or the documented demo admin email |
 | `DEMO_AUTHOR_PASSWORD` | Password for author accounts created during initial seeding |
 | `DEMO_ADMIN_PASSWORD` | Password for the admin account created during initial seeding |
 | `PORT` | Hosting-provided port, or `8000` |
@@ -135,7 +135,7 @@ PostgreSQL stores the application records and uploaded attachment bytes. Configu
 If deploying with SQLite instead, mount persistent storage at `/app/runtime` and set:
 
 ```dotenv
-DATABASE_URL=sqlite:////app/runtime/bookleaf.db
+DATABASE_URL=sqlite:////app/runtime/authorcare.db
 ```
 
 A database stored only on an ephemeral container filesystem can be lost during replacement or redeployment.
